@@ -1,3 +1,23 @@
-# Sales Success Predictive Model Development — a Classification problem
+# ARCH CASE STUDY
 
-## A functional model for predicting sales success based on contact center efforts.
+Submitted by: Ricky Jay Gomez
+
+## Executive Summary
+
+## Overview
+
+## Problem Statement
+
+## Objectives
+
+## Methodology and Modeling Framework
+
+## Model Development
+
+## Model Evaluation
+
+## Hyperparameter Tuning
+
+## Conclusion
+
+## Recommendation
