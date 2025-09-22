@@ -25,6 +25,10 @@ In this project, our team aims:
 
 ## Methodology and Modeling Framework
 
+### Framework
+
+!["Modeling Framework"](./assets/arch_framework.jpg "Figure 1: Modeling Framework")
+
 ## Model Development
 
 ## Model Evaluation
