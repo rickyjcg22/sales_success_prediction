@@ -27,7 +27,7 @@ In this project, our team aims:
 
 ### Framework
 
-!["Modeling Framework"](./assets/arch_framework.jpg "Figure 1: Modeling Framework")
+!["Modeling Framework"](assets/arch_framework.jpg "Figure 1: Modeling Framework")
 
 ## Model Development
 
