@@ -29,6 +29,7 @@ In this project, our team aims:
 
 This work follows the modeling framework in the figure below.
 !["Modeling Framework"](assets/arch_framework.jpg "Figure 1: Modeling Framework")
+
 Figure 1: Modeling Framework
 
 Here is the step-by-step procedure of the modeling process in this work:
