@@ -10,7 +10,7 @@ Our client is an insurance company with large global operations offering insuran
 
 ## Problem Statement
 
-Our team achieves its success once these important business questions from our client have been answered:
+Our team achieves its success once these important business questions from our client are answered:
 
 - How can we identify which customers are most likely to accept the sales offer when the contact center calls them, so we optimize the sales team effort and reduce wasted call?
 - How can we prioritize leads so that we maximize conversion rates and sales performance?
@@ -32,7 +32,7 @@ This work follows the modeling framework in the figure below.
 
 Figure 1: Modeling Framework
 
-Here is the step-by-step procedure of the modeling process in this work:
+Here is the step-by-step procedure of the modeling process:
 
 - It started with the data acquisition where the dataset was requested from the client as .csv file.
 - The dataset was analyzed through conducting a full-blown Exploratory Data Analysis wherein data were loaded, datatypes were inspected, and column names were fixed for better readability and processing during the EDA. Few checks were done including the Target Variable Analysis, Missing Values and Data Types, Numerical Feature Analysis, Categorical Feature Analysis, and Target-wise Analysis.
@@ -44,12 +44,24 @@ Here is the step-by-step procedure of the modeling process in this work:
 
 Our client provided a sales dataset consisting of 35,000 total number of observations with 10 numerical features, 10 categorical features, and 1 binary response variable (0s for No-Buys and 1s for Buys). Based on the initial view of the response variable, there is a severe class imbalance observed wherein 88.77% belong to No-buys and only 11.23% belong to Buys. There is no information about the unique identification for each record that would help us infer about the granularity of the dataset, and temporal data for time effects. Some numerical features were scaled and normalized to make sure that any discriminating power based on the differences in their scales does not affect the model performance. Categorical features were encoded numerically, but the choice of which method should be used depends on the type of the data distribution, business context, and other factors. EDA results supplement the data pre-processing to make sure that model performance is optimized from the dataset level.
 
+### Exploratory Data Analysis
+
+### Numerical Feature Transformation
+
+### Categorical Feature Transformation
+
+### Train-Test Split
+
+### Training Algorithms
+
 ## Model Development
 
 ## Model Evaluation
 
-## Hyperparameter Tuning
+## Model Optimization: Hyperparameter Tuning and Cross Validation
 
-## Conclusion
+## Results and Discussions
+
+## Conclusions
 
 ## Recommendation
