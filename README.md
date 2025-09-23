@@ -140,9 +140,17 @@ Table 4: Numerical features by target
 | age | 1 | Weak separation |
 | cpi_monthly, cci_monthly, ibr_employee_quarterly, count_employee_quaterly | Low signal | Might not be informative |
 
-### Numerical Feature Transformation
+On the other hand, categorical features observed with high degree of separation between target classes signifying highly informative predictors include the following:
 
-### Categorical Feature Transformation
+- type_employment
+- civil_status
+- highest_educ
+- credit_facility
+- contact_medium
+- month_last_contacted
+- previous_campaign
+
+### Feature Transformation
 
 ### Train-Test Split
 
