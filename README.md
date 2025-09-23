@@ -72,7 +72,7 @@ Table 1: Numerical Feature Summary Statistics
 | ibr_employee_quarterly | Min/Max: 0.63 to 5.04<br>Median: 4.86 | - Likely bimodal distribution | |
 | count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature | |
 
-!["Histogram of Numerical Features"](assets/arch_framework.jpg "Figure 2: Histogram of Numerical Features")
+!["Histogram of Numerical Features"](assets/num_hist.png "Figure 2: Histogram of Numerical Features")
 
 Figure 2: Histogram of Numerical Features
 
