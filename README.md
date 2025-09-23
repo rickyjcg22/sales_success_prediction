@@ -44,7 +44,33 @@ Here is the step-by-step procedure of the modeling process:
 
 Our client provided a sales dataset consisting of 35,000 total number of observations with 10 numerical features, 10 categorical features, and 1 binary response variable (0s for No-Buys and 1s for Buys). Based on the initial view of the response variable, there is a severe class imbalance observed wherein 88.77% belong to No-buys and only 11.23% belong to Buys. There is no information about the unique identification for each record that would help us infer about the granularity of the dataset, and temporal data for time effects. Some numerical features were scaled and normalized to make sure that any discriminating power based on the differences in their scales does not affect the model performance. Categorical features were encoded numerically, but the choice of which method should be used depends on the type of the data distribution, business context, and other factors. EDA results supplement the data pre-processing to make sure that model performance is optimized from the dataset level.
 
-### Exploratory Data Analysis
+### Exploratory Data Analysi
+
+#### Target Variable Analysis
+
+The response rate was observed to have a severe class imbalance where No-Buys (88.77%) class has dominated Buys (11.23%) class.
+
+#### Missing Values
+
+There are no missing values detected across all features.
+
+#### Numerical Feature Analysis
+
+Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them.
+
+Table 1: Numerical Feature Summary Statistics
+| Feature | Statistics | Observations | Action Items |
+| :-----: | :--------: | :----------: | :----------: |
+| age |
+| duration_latest |
+| count_call_current |
+| days_last_campaign |
+| count_call_previous |
+| evr_quarterly |
+| cpi_monthly |
+| cci_monthly |
+| ibr_employee_quarterly |
+| count_employee_quarterly |
 
 ### Numerical Feature Transformation
 
