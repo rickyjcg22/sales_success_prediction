@@ -76,6 +76,10 @@ Table 1: Numerical Feature Summary Statistics
 
 Figure 2: Histogram of Numerical Features
 
+Based on the boxplots, numerical features such as age, duration_latest, count_call_current, days_last_campaign, and count_call_previous were found to have a lot of outliers that go beyond the extreme values. Others such as evr_quarterly, cpi_monthly, cci_monthly, ibr_employee_quarterly, and count_employee_quarterly were found to have little to no outlier in their data.
+
+Correlation heatmaps were also analyzed to check the correlation of each feature with the target, and across each of them to verify if multi-collinearity exists in the dataset. Based on the correlation values as summarized in Table 2, duration_latest was found to exhibit highest postive correlation with the target. It implies that customers who stay longer on the call are more likely to buy than those who do not. More calls in previous campaign is observed to increase the probability of a customer taking the sales offer based on the moderate positive relationship between count_call_previous and target. The feature cci_monthly has a weak positive correlation with the target and might not be a strong predictor of the sales outcome on its own. Similarly, age has been perceived to have negligible effect on the customer's buying decision as well, but indicates that older people are more likely to buy based on its positive correlation with the target.
+
 #### Categorical Feature Analysis
 
 ### Numerical Feature Transformation
