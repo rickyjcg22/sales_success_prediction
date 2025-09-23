@@ -78,7 +78,31 @@ Figure 2: Histogram of Numerical Features
 
 Based on the boxplots, numerical features such as age, duration_latest, count_call_current, days_last_campaign, and count_call_previous were found to have a lot of outliers that go beyond the extreme values. Others such as evr_quarterly, cpi_monthly, cci_monthly, ibr_employee_quarterly, and count_employee_quarterly were found to have little to no outlier in their data.
 
-Correlation heatmaps were also analyzed to check the correlation of each feature with the target, and across each of them to verify if multi-collinearity exists in the dataset. Based on the correlation values as summarized in Table 2, duration_latest was found to exhibit highest postive correlation with the target. It implies that customers who stay longer on the call are more likely to buy than those who do not. More calls in previous campaign is observed to increase the probability of a customer taking the sales offer based on the moderate positive relationship between count_call_previous and target. The feature cci_monthly has a weak positive correlation with the target and might not be a strong predictor of the sales outcome on its own. Similarly, age has been perceived to have negligible effect on the customer's buying decision as well, but indicates that older people are more likely to buy based on its positive correlation with the target.
+Correlation heatmaps were also analyzed to check the correlation of each feature with the target, and across each of them to verify if multi-collinearity exists in the dataset. Based on the correlation values as summarized in Table 2:
+
+- duration_latest was found to exhibit highest postive correlation with the target. It implies that customers who stay longer on the call are more likely to buy than those who do not.
+- More calls in previous campaign is observed to increase the probability of a customer taking the sales offer based on the moderate positive relationship between count_call_previous and target.
+- The feature cci_monthly has a weak positive correlation with the target and might not be a strong predictor of the sales outcome on its own.
+- Similarly, age has been perceived to have negligible effect on the customer's buying decision as well, but indicates that older people are more likely to buy based on its positive correlation with the target.
+- In contrary to the one observed from the count_call_previous, count_call_current has showed a slightly inverse effect on the customer's buying decions; meaning, frequent calling might annoy customers or reflect unproductive efforts. However, the magnitude of their relationship with the target is higher for count_call_previous which might indicate that more wins could predominate based on the previous call frequencies.
+- A moderately negative effect of evr_quarterly on the target could reflect economic slowdown dampering buying behavior.
+- Similar observation was seen with ibr_quarterly as with the evr_quarterly which might be possibly linked to economoic conditions.
+- Moderately negative effect of the number of employees was seen which may indicate structural economy-wide trends.
+- A weak negative effect of cpi_monthly on the buying decision could imply that customers might be sensitive to price changes and inflation, but other factors might be influential to their final buying behavior.
+
+Table 2: Numerical Feature to Target Correlation
+| Feature | Correlation Coefficient | Observations |
+| :-----: | :--------: | :----------: |
+| age | +0.03 | Weak positive|
+| duration_latest | +0.41 | Strong positive |
+| count_call_current | –0.07 | Weak negative |
+| days_last_campaign | –0.32 | Moderate negative |
+| count_call_previous | +0.23 | Moderate positive |
+| evr_quarterly | –0.30 | Moderate negative |
+| cpi_monthly | –0.14 | Weak negative |
+| cci_monthly | +0.05 | Weak positive |
+| ibr_employee_quarterly | –0.31 | Moderate negative |
+| count_employee_quarterly | –0.35 | Moderate negative |
 
 #### Categorical Feature Analysis
 
