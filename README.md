@@ -29,11 +29,8 @@ In this project, our team aims:
 
 This work follows the modeling framework in the figure below.
 
-<br>
 !["Modeling Framework"](assets/arch_framework.jpg "Figure 1: Modeling Framework")
-
-<p style="text-align: center;">Figure 1: Modeling Framework</p>
-<br>
+Figure 1: Modeling Framework
 
 Here is the step-by-step procedure of the modeling process:
 
@@ -76,8 +73,7 @@ Table 1: Numerical Feature Summary Statistics
 | count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature | |
 
 !["Histogram of Numerical Features"](assets/num_hist.png "Figure 2: Histogram of Numerical Features")
-
-<p style="text-align: center;">Figure 2: Histogram of Numerical Features</p>
+Figure 2: Histogram of Numerical Features
 
 Based on the boxplots, numerical features such as age, duration_latest, count_call_current, days_last_campaign, and count_call_previous were found to have a lot of outliers that go beyond the extreme values. Others such as evr_quarterly, cpi_monthly, cci_monthly, ibr_employee_quarterly, and count_employee_quarterly were found to have little to no outlier in their data.
 
