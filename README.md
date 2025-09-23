@@ -94,7 +94,7 @@ Correlation heatmaps were also analyzed to check the correlation of each feature
 Table 2: Numerical Feature to Target Correlation
 | Feature | Correlation Coefficient | Observations |
 | :-----: | :--------: | :----------: |
-| age | +0.03 | Weak positive|
+| age | +0.03 | Weak positive |
 | duration_latest | +0.41 | Strong positive |
 | count_call_current | –0.07 | Weak negative |
 | days_last_campaign | –0.32 | Moderate negative |
@@ -108,6 +108,22 @@ Table 2: Numerical Feature to Target Correlation
 Correlation among the features were also investigated to verify if multi-collinearity exist which could affect the model performance. The highest correlation among numerical features was seen between evr_quarterly and ibr_employee_quarterly with correlation coefficient of +0.97, indicating a strong positive relationship between them. On the other hand, ibr_employee_quarterly and count_employee_quarterly were seen to have a strong positive correlation of +0.95. Whereas, evr_quarterly and count_employee_quarterly with another strong positive correlation of +0.91. Although not as strong as the other three relationships, a significant correlation between the days_last_campaign and the count_call_previous was also seen with correlation coefficient value of +0.59. To confirm the reliability of these observations, Variance Inflation Factor (VIF) analysis was also conducted. The result showed that ibr_employee_quarterly, evr_quarterly, and count_employee_quarterly are the numerical features with the highest VIF values (greater than 10), which is aligned to the initial observation of multi-collinearity via correlation analysis.
 
 #### Categorical Feature Analysis
+
+Table 3 shows the structure of each categorical feature based on their cardinality, composition, and some unique observations.
+
+Table 3: Categorical Features Structure
+| Feature | Cardinality | Observations |
+| :-----: | :--------: | :----------: |
+| type_employment | 12 | - Classes with <3% frequency: cat_3, cat_10, cat_8, and cat_11<br>Cat_8 has a strong signal (31.8% Buy Rate) against the target |
+| civil_status | 4 | - Cat_2 and Cat_3 have the highest response rates while Cat_1 and Cat_2 are the most frequent classes |
+| highest_educ | 8 | - Uneducated (Cat_6) and Unknown (Cat_7) groups show higher-than-average buy rates, especially compared to certain bachelor's degree holders (e.g., Cat_2 at only 7.8%)<br>- Top 3 categories (Cat_6, Cat_3, Cat_2) already cover nearly 70% of the dataset — enough for stable pattern recognition during training<br- Higher education doesn’t always lead to higher buy probability in this dataset — e.g., Cat_2 (likely a bachelor's group) has one of the lowest response rates<br>- Rare Category (Cat_4): While it shows a high buy rate (23.5%), it's just 0.05% of data |
+| credit_facility | 3 | -Strong separation between Cat_0 (higher buy rates) vs Cat_1 |
+| home_loan | 3 | - Class separation is not strong but could still be predictive |
+| personal_loan | 3 | - Weak class separation (super close buy rates across classes) but still worth keeping |
+| contact_medium | 2 | - High-value predictor due to strong class separation and highly balanced representation |
+| month_last_contacted | 10 | - Highly information feature due to strong class separation and seasonality |
+| dow_last_contacted | 5 | - Class separation isn't strong but still worth keeping |
+| previous_campaign | 3 | - Strong class separation |
 
 ### Numerical Feature Transformation
 
