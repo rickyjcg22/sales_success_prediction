@@ -61,8 +61,8 @@ Table 1 shows the summary of the desciptive statistics of all the numerical feat
 Table 1: Numerical Feature Summary Statistics
 | Feature | Statistics | Observations | Action Items |
 | :-----: | :--------: | :----------: | :----------: |
-| age | Min/Max: 17-98\\Mean/Median: 40.03 vs. 38.00 | _ Reasonable data range\\_ Slightly right skewed | |
-| duration_latest | Mean: 257.8\\Max: 4918\\Std. Dev.: 258.6 | \\_ Strongly right skewed with a very long tail\\_ High variance | |
+| age | Min/Max: 17-98<br>Mean/Median: 40.03 vs. 38.00 | - Reasonable data range<br>- Slightly right skewed | |
+| duration_latest | Mean: 257.8<br>Max: 4918<br>Std. Dev.: 258.6 | <br>- Strongly right skewed with a very long tail<br>- High variance | |
 | count_call_current |
 | days_last_campaign |
 | count_call_previous |
