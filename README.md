@@ -125,6 +125,21 @@ Table 3: Categorical Features Structure
 | dow_last_contacted | 5 | - Class separation isn't strong but still worth keeping |
 | previous_campaign | 3 | - Strong class separation |
 
+#### Target-wise Analysis
+
+Table 4 shows the summary of the signal strength of the target variable in each numerical feature through mean and median aggregation.
+
+Table 4: Numerical features by target
+| Feature | Signal Strength | Reason |
+| :-----: | :--------: | :----------: |
+| duration_latest | 4 | Strong separation |
+| count_call_previous | 3 | Higher in buyers |
+| days_last_campaign | 2 | Buyers contacted more recently |
+| evr_quarterly | 2 | Positive macroeconomic effect |
+| count_call_current | 2 | Higher for non-buyers |
+| age | 1 | Weak separation |
+| cpi_monthly, cci_monthly, ibr_employee_quarterly, count_employee_quaterly | Low signal | Might not be informative |
+
 ### Numerical Feature Transformation
 
 ### Categorical Feature Transformation
