@@ -64,7 +64,7 @@ Table 1: Numerical Feature Summary Statistics
 | age | Min/Max: 17 to 98<br>Mean/Median: 40.03 vs. 38.00 | - Reasonable data range<br>- Slightly right skewed | |
 | duration_latest | Mean: 257.8<br>Max: 4918<br>Std. Dev.: 258.6 | <br>- Strongly right skewed with a very long tail<br>- High variance | |
 | count_call_current | Mean: 2.56<br>Max: 56<br>75%: 3 | - Most values are low with few extreme outliers | |
-| days_last_campaign | Mean: 962<br>25-75%: 999 | \* 999 is used to encode "no previous campaign" | |
+| days_last_campaign | Mean: 962<br>25-75%: 999 | - 999 is used to encode "no previous campaign" | |
 | count_call_previous | Mean: 0.17<br>75%: 0<br>Max: 7 | - Most values are zeros<br>- Maximum value are found to be rare cases with high contact | |
 | evr_quarterly | Min: -3.4<br>Max: 1.4 | - Slightly left skewed<br>- With high variance relative to mean | |
 | cpi_monthly | Min/Max: 92.2 to 94.8<br>Std. Dev.: 0.58 | - Tigh range and variability | |
