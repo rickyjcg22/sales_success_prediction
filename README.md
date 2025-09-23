@@ -105,6 +105,8 @@ Table 2: Numerical Feature to Target Correlation
 | ibr_employee_quarterly | –0.31 | Moderate negative |
 | count_employee_quarterly | –0.35 | Moderate negative |
 
+Correlation among the features were also investigated to verify if multi-collinearity exist which could affect the model performance. The highest correlation among numerical features was seen between evr_quarterly and ibr_employee_quarterly with correlation coefficient of +0.97, indicating a strong positive relationship between them. On the other hand, ibr_employee_quarterly and count_employee_quarterly were seen to have a strong positive correlation of +0.95. Whereas, evr_quarterly and count_employee_quarterly with another strong positive correlation of +0.91. Although not as strong as the other three relationships, a significant correlation between the days_last_campaign and the count_call_previous was also seen with correlation coefficient value of +0.59. To confirm the reliability of these observations, Variance Inflation Factor (VIF) analysis was also conducted. The result showed that ibr_employee_quarterly, evr_quarterly, and count_employee_quarterly are the numerical features with the highest VIF values (greater than 10), which is aligned to the initial observation of multi-collinearity via correlation analysis.
+
 #### Categorical Feature Analysis
 
 ### Numerical Feature Transformation
