@@ -152,7 +152,11 @@ On the other hand, categorical features observed with high degree of separation 
 
 ### Feature Transformation
 
+For the feature transformations, both duration_latest and count_call_current underwent Box-Cox transformations for scaling and normalization. The days_last_campaign variable was converted into binary indicator (0 for no previous contact and 1 for previous contact). Features ibr_employee_quarterly and count_employee_quarterly were removed due to high collinearity with other variables. Records with credit_facility = Cat_2 were excluded since they represented only 0.0086% of the dataset and were all No-Buys, resulting in a new dataset size of 34,997 records. For categorical variables, type_employment, highest_educ, and month_last_contacted were target encoded for logistic regression and frequency encoded for tree-based models. Whereas, civil_status, home_loan, personal_loan, contact_medium, dow_last_contacted, and credit_facility were one-hot encoded across both models since they have relatively lower cardinality compared to other features. The previous_campaign feature was ordinal encoded for both models to give higher importance for successful previous campaigns. All other features not mentioned were retained in their original form. Overall, there are two separate datasets produced from the data pre-processing used in training both the logistic regression and tree-based models wherein new sets are composed of 25 features and 1 target variables.
+
 ### Train-Test Split
+
+The dataset was divided into train and test data by 80%-20% alotment. Sets were randomly sampled, random seed was initiated for reproducibility of the modeling results, and the dataset was stratified by y to better handle class imbalance and maintain their original proportions during the learning process.
 
 ### Training Algorithms
 
