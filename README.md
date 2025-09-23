@@ -61,7 +61,6 @@ There are no missing values detected across all features.
 
 Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them. Whereas, Figure 2 support the summary statistics with visualized data distributions for each feature through their histograms.
 
-<br>
 Table 1: Numerical Feature Summary Statistics
 | Feature | Statistics | Observations | Action Items |
 | :-----: | :--------: | :----------: | :----------: |
@@ -75,13 +74,10 @@ Table 1: Numerical Feature Summary Statistics
 | cci_monthly | Min/Max: -50.8 to -26.9 | - Negative values observed (normally seen for CCIs) | |
 | ibr_employee_quarterly | Min/Max: 0.63 to 5.04<br>Median: 4.86 | - Likely bimodal distribution | |
 | count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature | |
-<br>
 
-<br>
 !["Histogram of Numerical Features"](assets/num_hist.png "Figure 2: Histogram of Numerical Features")
 
 <p style="text-align: center;">Figure 2: Histogram of Numerical Features</p>
-<br>
 
 Based on the boxplots, numerical features such as age, duration_latest, count_call_current, days_last_campaign, and count_call_previous were found to have a lot of outliers that go beyond the extreme values. Others such as evr_quarterly, cpi_monthly, cci_monthly, ibr_employee_quarterly, and count_employee_quarterly were found to have little to no outlier in their data.
 
@@ -97,7 +93,6 @@ Correlation heatmaps were also analyzed to check the correlation of each feature
 - Moderately negative effect of the number of employees was seen which may indicate structural economy-wide trends.
 - A weak negative effect of cpi_monthly on the buying decision could imply that customers might be sensitive to price changes and inflation, but other factors might be influential to their final buying behavior.
 
-<br>
 Table 2: Numerical Feature to Target Correlation
 | Feature | Correlation Coefficient | Observations |
 | :-----: | :--------: | :----------: |
@@ -111,7 +106,6 @@ Table 2: Numerical Feature to Target Correlation
 | cci_monthly | +0.05 | Weak positive |
 | ibr_employee_quarterly | –0.31 | Moderate negative |
 | count_employee_quarterly | –0.35 | Moderate negative |
-<br>
 
 #### Categorical Feature Analysis
 
