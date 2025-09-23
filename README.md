@@ -30,7 +30,7 @@ In this project, our team aims:
 This work follows the modeling framework in the figure below.
 !["Modeling Framework"](assets/arch_framework.jpg "Figure 1: Modeling Framework")
 
-Figure 1: Modeling Framework
+<center>Figure 1: Modeling Framework</center>
 
 Here is the step-by-step procedure of the modeling process:
 
@@ -44,7 +44,7 @@ Here is the step-by-step procedure of the modeling process:
 
 Our client provided a sales dataset consisting of 35,000 total number of observations with 10 numerical features, 10 categorical features, and 1 binary response variable (0s for No-Buys and 1s for Buys). Based on the initial view of the response variable, there is a severe class imbalance observed wherein 88.77% belong to No-buys and only 11.23% belong to Buys. There is no information about the unique identification for each record that would help us infer about the granularity of the dataset, and temporal data for time effects. Some numerical features were scaled and normalized to make sure that any discriminating power based on the differences in their scales does not affect the model performance. Categorical features were encoded numerically, but the choice of which method should be used depends on the type of the data distribution, business context, and other factors. EDA results supplement the data pre-processing to make sure that model performance is optimized from the dataset level.
 
-### Exploratory Data Analysi
+### Exploratory Data Analysis
 
 #### Target Variable Analysis
 
@@ -78,7 +78,7 @@ Figure 2: Histogram of Numerical Features
 
 Based on the boxplots, numerical features such as age, duration_latest, count_call_current, days_last_campaign, and count_call_previous were found to have a lot of outliers that go beyond the extreme values. Others such as evr_quarterly, cpi_monthly, cci_monthly, ibr_employee_quarterly, and count_employee_quarterly were found to have little to no outlier in their data.
 
-Correlation heatmaps were also analyzed to check the correlation of each feature with the target, and across each of them to verify if multi-collinearity exists in the dataset. Based on the correlation values as summarized in Table 2:
+Correlation heatmaps were also analyzed to check the correlation of each feature with the target as summarized in Table 2:
 
 - duration_latest was found to exhibit highest postive correlation with the target. It implies that customers who stay longer on the call are more likely to buy than those who do not.
 - More calls in previous campaign is observed to increase the probability of a customer taking the sales offer based on the moderate positive relationship between count_call_previous and target.
