@@ -56,7 +56,7 @@ There are no missing values detected across all features.
 
 #### Numerical Feature Analysis
 
-Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them.
+Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them. Whereas, Figure 2 support the summary statistics with visualized data distributions for each feature through their histograms.
 
 Table 1: Numerical Feature Summary Statistics
 | Feature | Statistics | Observations | Action Items |
@@ -71,6 +71,12 @@ Table 1: Numerical Feature Summary Statistics
 | cci_monthly | Min/Max: -50.8 to -26.9 | - Negative values observed (normally seen for CCIs) | |
 | ibr_employee_quarterly | Min/Max: 0.63 to 5.04<br>Median: 4.86 | - Likely bimodal distribution | |
 | count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature | |
+
+!["Histogram of Numerical Features"](assets/arch_framework.jpg "Figure 2: Histogram of Numerical Features")
+
+Figure 2: Histogram of Numerical Features
+
+#### Categorical Feature Analysis
 
 ### Numerical Feature Transformation
 
