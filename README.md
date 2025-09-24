@@ -211,10 +211,10 @@ Table 5: Logistic Regression Hyperparameters
 | random_state | 42 | 42 |
 | max_iter | 1000 | 1000 |
 | n_jobs | -1 | -1 |
-| C | 0.01, 1, 100 | 0.01, 1, 100 |
-| penalty | l1, l2 | Moderate positive |
-| solver | liblinear, saga | liblinear, saga |
-| class_weight | None, balanced | None, balanced |
+| C | 100 | 100 |
+| penalty | l1 | l2 |
+| solver | liblinear | liblinear |
+| class_weight | None | balanced |
 | n_iter | 10 | 10 |
 | scoring | precision | avg. precision |
 | cv | 5 | 5 |
