@@ -227,7 +227,7 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
-Figure 3: Logistic Regression Confusion Matrices and ROC Curves
+Figure 3: Logistic Regression Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimized LR, (c) Avg. Precision-optimized LR
 
 ## Results and Discussions
 
