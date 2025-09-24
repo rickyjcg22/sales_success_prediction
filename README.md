@@ -196,7 +196,7 @@ The model training begin with loading the pre-processed dataset intended for Log
 
 The model training process was executed in the following sequence:
 
-1. Initial model instatiated and fitted to the training dataset using hyperparameters including random_state, max_iter, and n_jobs with values of 42, 1000, and -1, respectively. Default values for other Logisitc Regression hyperparameters were initially retained.
+1. Initial model instatiated and fitted to the training dataset using hyperparameters including random_state, max_iter, and n_jobs with values of 42, 1000, and -1, respectively.
 2. The model was used to predict target values against the test dataset, and was evaluated by producing performance metrics such as confusion matrix, classification report, ROC AUC score, and accuracy score. ROC curve was generated to visualize the trend of the relationship between true positive rate and false positive rate at default threshold of 0.50.
 3. To improve the model performance based on the initial result of model evaluation, hyperparameter tuning was done to optimize the model hyperparameters by setting up parameter distribution and plugging them into a Randomized Search Cross Validation method.
 4. The best model was used to predict target values based on the test dataset feature values and further evaluated using the same metrics.
@@ -204,6 +204,20 @@ The model training process was executed in the following sequence:
 6. Finally, profitability analysis was carried out to investigate the profitability of using the models developed against our client's business context and objectives. Overall, three different model iterations were produced using Logistic Regression.
 
 Table 5 shows the summary of the model hyperparameters used during the model training
+
+Table 5: Logistic Regression Hyperparameters
+| Hyperparameter | LR: precision | LR: avg. precision |
+| :-------------: | :--: | :--: |
+| random_state | 42 | 42 |
+| max_iter | 1000 | 1000 |
+| n_jobs | -1 | -1 |
+| C | 0.01, 1, 100 | 0.01, 1, 100 |
+| penalty | l1, l2 | Moderate positive |
+| solver | liblinear, saga | liblinear, saga |
+| class_weight | None, balanced | None, balanced |
+| n_iter | 10 | 10 |
+| scoring | precision | avg. precision |
+| cv | 5 | 5 |
 
 ## Results and Discussions
 
