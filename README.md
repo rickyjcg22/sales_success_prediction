@@ -160,6 +160,36 @@ The dataset was divided into train and test data by 80%-20% alotment. Sets were 
 
 ### Training Algorithms
 
+This work solves a binary classification problem for predicting whether or not a customer will take the sales offer during cold calls, as affected by various numerical and categorical features and a highly imbalanced target variable. Given this, our team decided to use Logistic Regression, Generalized Linear Model (GLM) with Logit link function, and tree-based models including Random Forest and Extreme Gradient Boosting (XGBoost) algorithms for this task. Here are some of the qualifications of each algorithm for our use case:
+
+1. Logistic Regression:
+
+- Provides probability outputs that are directly usable for customer prioritization;
+- Highly interpretable: coefficients can be explained to business users; and
+- Serves as a strong baseline model for binary classification tasks.
+
+2. GLM-logit:
+
+- Similar to Logistic Regression, but with statistical inference tools;
+- Helps validate whether features are statistically significant, which is useful for explaining why certain factors matter; and
+- Complements Logistic Regression as a validation model against the client's in-house methodology.
+
+3. Random Forest:
+
+- Handles nonlinear relationships and interactions between features;
+- More robust to noise and outliers compared to logistic models;
+- Provides feature importance rankings, useful for identifying drivers of customer buying behavior; and
+- Good as a benchmark ensemble model that improves Logistic Regression performance.
+
+4. XGBoost:
+
+- Very strong at handling imbalanced datasets, which matches the composition of the target variable in the dataset;
+- Captures complex interactions between features better than Random Forest model;
+- Provides well-calibrated probabilities (especially when tuned), which are critical for ROI simulation; and
+- Works well with SHAP values for interpretability, making it a powerful production-ready choice.
+
+## XGBoost since:
+
 ## Model Development
 
 ## Model Evaluation
