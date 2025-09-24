@@ -57,7 +57,7 @@ There are no missing values detected across all features.
 
 #### Numerical Feature Analysis
 
-Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them. Whereas, Figure 2 support the summary statistics with visualized data distributions for each feature through their histograms.
+Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them. Whereas, Figure 2 supports the summary statistics with visualized data distributions for each feature through their histograms.
 
 Table 1: Numerical Feature Summary Statistics
 | Feature | Statistics | Observations | Action Items |
@@ -152,7 +152,7 @@ On the other hand, categorical features observed with high degree of separation 
 
 ### Feature Transformation
 
-For the feature transformations, both duration_latest and count_call_current underwent Box-Cox transformations for scaling and normalization. The days_last_campaign variable was converted into binary indicator (0 for no previous contact and 1 for previous contact). Features ibr_employee_quarterly and count_employee_quarterly were removed due to high collinearity with other variables. Records with credit_facility = Cat_2 were excluded since they represented only 0.0086% of the dataset and were all No-Buys, resulting in a new dataset size of 34,997 records. For categorical variables, type_employment, highest_educ, and month_last_contacted were target encoded for logistic regression and frequency encoded for tree-based models. Whereas, civil_status, home_loan, personal_loan, contact_medium, dow_last_contacted, and credit_facility were one-hot encoded across both models since they have relatively lower cardinality compared to other features. The previous_campaign feature was ordinal encoded for both models to give higher importance for successful previous campaigns. All other features not mentioned were retained in their original form. Overall, there are two separate datasets produced from the data pre-processing used in training both the logistic regression and tree-based models wherein new sets are composed of 25 features and 1 target variables.
+For the feature transformations, both duration_latest and count_call_current underwent Box-Cox transformations for scaling and normalization. The days_last_campaign variable was converted into binary indicator (0 for no previous contact and 1 for previous contact). Features ibr_employee_quarterly and count_employee_quarterly were removed due to high collinearity with other variables. Records with credit_facility = Cat_2 were excluded since they represented only 0.0086% of the dataset and were all No-Buys, resulting in a new dataset size of 34,997 records. For categorical variables, type_employment, highest_educ, and month_last_contacted were target encoded for logistic regression and frequency encoded for tree-based models. Whereas, civil_status, home_loan, personal_loan, contact_medium, dow_last_contacted, and credit_facility were one-hot encoded across both models since they have relatively lower cardinality compared to other features. The previous_campaign feature was ordinal encoded for both models to give higher importance for successful previous campaigns. All other features not mentioned were retained in their original form. Overall, there are two separate datasets produced from the data pre-processing used in training both the logistic regression and tree-based models wherein new sets are composed of 25 features and 1 target variable.
 
 ### Train-Test Split
 
@@ -192,16 +192,16 @@ This work solves a binary classification problem for predicting whether or not a
 
 ### Logistic Regression
 
-The model training begin with loading the pre-processed dataset intended for Logistic Regression model as dataframes. The features and target variables were segregated and split into training and test sets based on the planned proportions.
+The model training begins with loading the pre-processed dataset intended for Logistic Regression model as dataframes. The features and target variables were segregated and split into training and test sets based on the planned proportions.
 
 The model training process was executed in the following sequence:
 
-1. Initial model instatiated and fitted to the training dataset using hyperparameters including random_state, max_iter, and n_jobs with values of 42, 1000, and -1, respectively.
+1. Initial model was instantiated and fitted to the training dataset using hyperparameters including random_state, max_iter, and n_jobs with values of 42, 1000, and -1, respectively.
 2. The model was used to predict target values against the test dataset, and was evaluated by producing performance metrics such as confusion matrix, classification report, ROC AUC score, and accuracy score. ROC curve was generated to visualize the trend of the relationship between true positive rate and false positive rate at default threshold of 0.50.
 3. To improve the model performance based on the initial result of model evaluation, hyperparameter tuning was done to optimize the model hyperparameters by setting up parameter distribution and plugging them into a Randomized Search Cross Validation method.
 4. The best model was used to predict target values based on the test dataset feature values and further evaluated using the same metrics.
 5. The initial improved model was optimized for precision scoring; whereas, the second improved model was optimized for average precision scoring. Alongside, average precision and PR Curve AUC scores were also assessed for additional context during the model evaluation process.
-6. Finally, profitability analysis was carried out to investigate the profitability of using the models developed against our client's business context and objectives. Overall, three different model iterations were produced using Logistic Regression.
+6. Finally, profitability analysis was carried out to investigate the profitability of using the models developed against our client's business context and objectives. Threshold values were optimized to maximize the gains from each risk band based on the risk assessment conducted by the sales team and its corresponding insights as additional context that we used for the calculating models' profitability estimates. Overall, three different model iterations were produced using Logistic Regression.
 
 Table 5 shows the summary of the model hyperparameters used during the model training process.
 
@@ -221,13 +221,13 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 
 ### Generalized Linear Model with logit Link Function
 
-!["Logistic Regression Confusion Matrices"](assets/confusion_matrix.jpg "Figure 3: Logistic Regression Confusion Matrices")
+## Model Evaluation
 
-Figure 3: Logistic Regression Confusion Matrices
+### Performance
 
-!["Logistic Regression ROC Curves"](assets/roc_curve.jpg "Figure 4: Logistic Regression ROC Curves")
+!["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
-Figure 4: Logistic Regression ROC Curves
+Figure 3: Logistic Regression Confusion Matrices and ROC Curves
 
 ## Results and Discussions
 
