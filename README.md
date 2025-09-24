@@ -188,13 +188,22 @@ This work solves a binary classification problem for predicting whether or not a
 - Provides well-calibrated probabilities (especially when tuned), which are critical for ROI simulation; and
 - Works well with SHAP values for interpretability, making it a powerful production-ready choice.
 
-## XGBoost since:
-
 ## Model Development
 
-## Model Evaluation
+### Logistic Regression
 
-## Model Optimization: Hyperparameter Tuning and Cross Validation
+The model training begin with loading the pre-processed dataset intended for Logistic Regression model as dataframes. The features and target variables were segregated and split into training and test sets based on the planned proportions.
+
+The model training process was executed in the following sequence:
+
+1. Initial model instatiated and fitted to the training dataset using hyperparameters including random_state, max_iter, and n_jobs with values of 42, 1000, and -1, respectively. Default values for other Logisitc Regression hyperparameters were initially retained.
+2. The model was used to predict target values against the test dataset, and was evaluated by producing performance metrics such as confusion matrix, classification report, ROC AUC score, and accuracy score. ROC curve was generated to visualize the trend of the relationship between true positive rate and false positive rate at default threshold of 0.50.
+3. To improve the model performance based on the initial result of model evaluation, hyperparameter tuning was done to optimize the model hyperparameters by setting up parameter distribution and plugging them into a Randomized Search Cross Validation method.
+4. The best model was used to predict target values based on the test dataset feature values and further evaluated using the same metrics.
+5. The initial improved model was optimized for precision scoring; whereas, the second improved model was optimized for average precision scoring. Alongside, average precision and PR Curve AUC scores were also assessed for additional context during the model evaluation process.
+6. Finally, profitability analysis was carried out to investigate the profitability of using the models developed against our client's business context and objectives. Overall, three different model iterations were produced using Logistic Regression.
+
+Table 5 shows the summary of the model hyperparameters used during the model training
 
 ## Results and Discussions
 
