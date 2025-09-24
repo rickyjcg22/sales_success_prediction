@@ -203,9 +203,9 @@ The model training process was executed in the following sequence:
 5. The initial improved model was optimized for precision scoring; whereas, the second improved model was optimized for average precision scoring. Alongside, average precision and PR Curve AUC scores were also assessed for additional context during the model evaluation process.
 6. Finally, profitability analysis was carried out to investigate the profitability of using the models developed against our client's business context and objectives. Overall, three different model iterations were produced using Logistic Regression.
 
-Table 5 shows the summary of the model hyperparameters used during the model training
+Table 5 shows the summary of the model hyperparameters used during the model training process.
 
-Table 5: Logistic Regression Hyperparameters for Random Searc CV
+Table 5: Logistic Regression Hyperparameters for Random Search CV
 | Hyperparameter | LR: precision | LR: avg. precision |
 | :-------------: | :--: | :--: |
 | random_state | 42 | 42 |
@@ -218,6 +218,16 @@ Table 5: Logistic Regression Hyperparameters for Random Searc CV
 | n_iter | 10 | 10 |
 | scoring | precision | avg. precision |
 | cv | 5 | 5 |
+
+### Generalized Linear Model with logit Link Function
+
+!["Logistic Regression Confusion Matrices"](assets/confusion_matrix.jpg "Figure 3: Logistic Regression Confusion Matrices")
+
+Figure 3: Logistic Regression Confusion Matrices
+
+!["Logistic Regression ROC Curves"](assets/roc_curve.jpg "Figure 4: Logistic Regression ROC Curves")
+
+Figure 4: Logistic Regression ROC Curves
 
 ## Results and Discussions
 
