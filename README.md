@@ -205,7 +205,7 @@ The model training process was executed in the following sequence:
 
 Table 5 shows the summary of the model hyperparameters used during the model training
 
-Table 5: Logistic Regression Hyperparameters
+Table 5: Logistic Regression Hyperparameters for Random Searc CV
 | Hyperparameter | LR: precision | LR: avg. precision |
 | :-------------: | :--: | :--: |
 | random_state | 42 | 42 |
