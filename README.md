@@ -255,8 +255,8 @@ Table 6: Summary of Classification Report Outputs
 | f1-score | 0.49 | 0.52 | 0.57 |
 | Accuracy | 0.91 | 0.91 | 0.85 |
 | ROC AUC | 0.9250 | 0.9308 | 0.9309 |
-| Avg. Precision | 0.5404 | 0.5919 | 0.5808 |
-| PR AUC | 0.5395 | 0.5908 | 0.5797 |
+| Avg. Precision | 0.5663 | 0.5919 | 0.5808 |
+| PR AUC | 0.5652 | 0.5908 | 0.5797 |
 
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
@@ -278,9 +278,26 @@ Based on the confusion matrix at default threshold of 0.50, the total profit was
 Table 8: Model profitability at default threshold = 0.50.
 | Model | Total Profit |
 | :---: | :----------: |
-| Naive LR| $449,274.24 |
-| Precision-LR | $25% | 705.00 | -300.00$ |
-| Avg. Precision-LR | 65% | 1,225.00 | -300.00 |
+| Naive LR| -$325,971.43 |
+| Precision-LR | -$254,042.86 |
+| Avg. Precision-LR | $445,557.14 |
+
+Table 9: Model profitability at optimized thresholds for each risk band.
+| Parameter | Naive LR | Precision-LR | Avg. Precision-LR |
+| :-------: | :------: | :----------: | :---------------: |
+| High Best Threshold | 0.30 | 0.28 | 0.78 |
+| High Best Profit | -$65,310.00 | -$49,770.00 | -$53,970.00 |
+| Mid Best Threshold | 0.15 | 0.15 | 0.59 |
+| Mid Best Profit | $115,980.00 | $139,470.00 | $144,150.00 |
+| Low Best Threshold | 0.11 | 0.09 | 0.38 |
+| Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 |
+
+Table 10: Net Profit Gain and Net Lost Opportunities.
+| Model | Net Profit Gain | Net Lost Opportunities |
+| :---: | :-------------: | :--------------------: |
+| Naive LR| $1,445,380.00 | -$295,610.00 |
+| Precision-LR | $1,496,070.00 | -$244,920.00 |
+| Avg. Precision-LR | $1,513,035.00 | -$227,955.00 |
 
 ## Results and Discussions
 
