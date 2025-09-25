@@ -292,7 +292,7 @@ Table 9: Model profitability at optimized thresholds for each risk band.
 | Low Best Threshold | 0.11 | 0.09 | 0.38 |
 | Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 |
 
-Table 10: Net Profit, Total Gain, and Total Lost Opportunities at Optimized Thresholds.
+Table 10: Net Profit, Total Gains, and Total Lost Opportunities at Optimized Thresholds.
 | Model | Net Profit | Total Gains | Total Lost Opportunities |
 | :---: | :--------: | :---------: | :----------------------: |
 | Naive LR | $466,970.00 | $1,445,380.00 | -$295,610.00 |
