@@ -2,6 +2,10 @@
 
 Proponent: Ricky Jay Gomez
 
+Author's Note:
+
+Link to GitHub Repository: https://github.com/rickyjcg22/sales_success_prediction.git
+
 ## Executive Summary
 
 ## Overview
@@ -192,7 +196,7 @@ This work solves a binary classification problem for predicting whether or not a
 
 ### Logistic Regression
 
-The model training begins with loading the pre-processed dataset intended for Logistic Regression model as dataframes. The features and target variables were segregated and split into training and test sets based on the planned proportions.
+The model training begins with loading the pre-processed dataset intended for Logistic Regression model as dataframes. The feature and target variables were segregated and split into training and test sets based on the planned proportions.
 
 The model training process was executed in the following sequence:
 
@@ -221,9 +225,25 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 
 ### Generalized Linear Model with logit Link Function
 
+### Feature Selected Logistic Regression
+
+### Random Forest
+
 ## Model Evaluation
 
 ### Performance
+
+#### Scikit-learn's Logistic Regression
+
+The performance of the Logistic Regression model and its iterations developed in this work are assessed against the following metrics:
+
+1. Precision - tells how many customers that the model has classified as buying customers actually took the sales offer; highly prioritized because we are tying to reduce wasted calls.
+2. Recall - tells how many customers the model has correctly predicted as buying customers; also a priority since we want to capture buying customers as many as we can to avoid loss in sales opportunities.
+3. f1-score - balances the precision and recall.
+4. Accuracy - tells how accurate the model classifies a buying vs. non-buying customers; not extremely important for choosing the best model but nice to report as additional layer of context about the model performance.
+5. ROC AUC - gives a holistic view about how the model can discriminate between classes.
+6. Average precision - gives aggregated precision scores across various thresholds; good basis of model performance for highly imbalanced dataset such as in our work.
+7. PR AUC -
 
 Table 6: Summary of Classification Report Outputs
 | Metrics | Naive LR | Precision LR | Avg. Precision LR |
@@ -233,8 +253,8 @@ Table 6: Summary of Classification Report Outputs
 | f1-score | 0.49 | 0.48 | 0.57 |
 | Accuracy | 0.91 | 0.91 | 0.85 |
 | ROC AUC | 0.9250 | 0.9243 | 0.9309 |
-| Avg. Precision | 0.5404 | 0.5652 | -0.5808 |
-| PR AUC | 0.5395 | 0.5641 | -0.5797 |
+| Avg. Precision | 0.5404 | 0.5652 | 0.5808 |
+| PR AUC | 0.5395 | 0.5641 | 0.5797 |
 
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
