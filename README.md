@@ -226,18 +226,17 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 For the Random Forest model, similar process was employed to model training as with Logistic Regression model. The values of the RF hyperparameters are summarized in Table 6.
 
 Table 6: Random Forest Hyperparameters for Random Search CV
-| Hyperparameter | LR: precision | LR: avg. precision |
-| :-------------: | :--: | :--: |
-| random_state | 42 | 42 |
-| max_iter | 1000 | 1000 |
-| n_jobs | -1 | -1 |
-| C | 100 | 100 |
-| penalty | l1 | l2 |
-| solver | liblinear | liblinear |
-| class_weight | None | balanced |
-| n_iter | 10 | 10 |
-| scoring | precision | avg. precision |
-| cv | 5 | 5 |
+| Hyperparameter | Values |
+| :-------------: | :--: |
+| random_state | 42 |
+| n_jobs | -1 |
+| n_estimators | 100, 200, 300 |
+| max_depth | None, 10, 20, 30 |
+| min_samples_split | 2, 5, 10 |
+| min_samples_leaf | 1, 2, 4 |
+| max_features | auto, sqrt, log2 |
+| scoring | precision |
+| cv | 5 |
 
 ## Model Evaluation
 
@@ -253,9 +252,9 @@ The performance of the Logistic Regression model, its iterations, and the Random
 6. Average precision - gives aggregated precision scores across various thresholds; good basis of model performance for highly imbalanced dataset such as in our work.
 7. PR AUC - provides how well the model can discriminate between classes when there is a high class imbalance in the dataset by capturing the trade-off between precision and recall.
 
-Table 6 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, avg. precision-optimized LR, and random forest models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each model.
+Table 7 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, avg. precision-optimized LR, and random forest models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each model.
 
-Table 6: Summary of Classification Report Outputs
+Table 7: Summary of Classification Report Outputs
 | Metrics | Naive LR | Precision LR | Avg. Precision LR | Random Forest |
 | :-----: | :------: | :----------: | :---------------: | :-----------: |
 | Precision | 0.65 | 0.67 | 0.43 | 0.62 |
@@ -272,18 +271,18 @@ Figure 3: Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimiz
 
 ### Profitability Analysis
 
-Our client is planning to run a campaign on the list of 10,000 prospective customers. Thus, they want to directly tie our models' predictive performance against this list so they can decided whether or not this campaign would be worth running based on the gain that they can potentially generate, and account the possible losses from misclassifications. In the report that the sales team has shared to us, they segmented the list based on different risk category and the corresponding risk distribution. Furthermore, they provided us the estimate of the profit estimate for each customer based on their buying decision. These numbers are summarized in Table 7.
+Our client is planning to run a campaign on the list of 10,000 prospective customers. Thus, they want to directly tie our models' predictive performance against this list so they can decided whether or not this campaign would be worth running based on the gain that they can potentially generate, and account the possible losses from misclassifications. In the report that the sales team has shared to us, they segmented the list based on different risk category and the corresponding risk distribution. Furthermore, they provided us the estimate of the profit estimate for each customer based on their buying decision. These numbers are summarized in Table 8.
 
-Table 7: Customer Risk Assessment
+Table 8: Customer Risk Assessment
 | Risk Band | Risk Distribution | Gain from sales taken up | Loss from sales not taken up |
 | :-------: | :---------------: | :----------------------: | :--------------------------: |
 | High-risk | 10% | 285.00 | -300.00 |
 | Medium-risk | 25% | 705.00 | -300.00 |
 | Low-risk | 65% | 1,225.00 | -300.00 |
 
-Based on the confusion matrix at default threshold of 0.50, the total profit was calculated from the contributions of customers from each risk band. This gives an initial view of how pofitable a model could be. However, to maximize the profits threshold values from each risk band were optimized, giving the best profit values that our client can generate per model. Likewise, the total profit was recalculated from risk band contributions at optimized thresholds. Alongside, the expected net profit from intended phone calls and the net loss in opportunity due to misclassified customers were also accounted and reported. Table 8, 9, and 10 summarize the profitability results for each model.
+Based on the confusion matrix at default threshold of 0.50, the total profit was calculated from the contributions of customers from each risk band. This gives an initial view of how pofitable a model could be. However, to maximize the profits threshold values from each risk band were optimized, giving the best profit values that our client can generate per model. Likewise, the total profit was recalculated from risk band contributions at optimized thresholds. Alongside, the expected net profit from intended phone calls and the net loss in opportunity due to misclassified customers were also accounted and reported. Table 9, 10, and 11 summarize the profitability results for each model.
 
-Table 8: Model profitability at default threshold = 0.50.
+Table 9: Model profitability at default threshold = 0.50.
 | Model | Total Profit |
 | :---: | :----------: |
 | Naive LR| -$325,971.43 |
@@ -291,7 +290,7 @@ Table 8: Model profitability at default threshold = 0.50.
 | Avg. Precision-LR | $445,557.14 |
 | Random Forest | -$131,177.14 |
 
-Table 9: Model profitability at optimized thresholds for each risk band.
+Table 10: Model profitability at optimized thresholds for each risk band.
 | Parameter | Naive LR | Precision-LR | Avg. Precision-LR | Random Forest |
 | :-------: | :------: | :----------: | :---------------: | :-----------: |
 | High Best Threshold | 0.30 | 0.28 | 0.78 | 0.32 |
@@ -301,13 +300,21 @@ Table 9: Model profitability at optimized thresholds for each risk band.
 | Low Best Threshold | 0.11 | 0.09 | 0.38 | 0.10 |
 | Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 | $501,500.00 |
 
-Table 10: Net profit, total gains, and total lost opportunities at optimized thresholds.
+Table 11: Net profit, total gains, and total lost opportunities at optimized thresholds.
 | Model | Net Profit | Total Gains | Total Lost Opportunities |
 | :---: | :--------: | :---------: | :----------------------: |
 | Naive LR | $466,970.00 | $1,445,380.00 | -$295,610.00 |
 | Precision-LR | $550,950.00 | $1,496,070.00 | -$244,920.00 |
 | Avg. Precision-LR | $567,180.00 | $1,513,035.00 | -$227,955.00 |
 | Random Forest | $632,150.00 | $1,533,880 | -$180,530.00 |
+
+### Feature Importance
+
+Random Forest has the capability to rank features based on their contribution to the model output values. Pareto analysis was employed to the selection of the most important features within our dataset, wherein a cutoff of 80% was considered as a benchmark. Figure 4 shows the feature importance ranking based on cumulative feature importance scores provided by the Random Forest model. Based on this figure, duration_latest, age, evr_quarterly, cci_monthly, days_last_campaign, month_last_contacted, and cpi_monthly are the most important features that make up the 80% of cumulative sums of feature importance scores.
+
+!["Feature Importance Ranking"](assets/important_features.png "Figure 4: Feature Importance Ranking")
+
+Figure 4: Feature Importance Ranking.
 
 ## Results and Discussions
 
