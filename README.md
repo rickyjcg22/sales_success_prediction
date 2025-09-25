@@ -243,7 +243,7 @@ Table 6: Random Forest Hyperparameters for Random Search CV
 
 ### Performance
 
-The performance of the Logistic Regression model and its iterations and the Random Forest developed in this work are assessed against the following metrics:
+The performance of the Logistic Regression model, its iterations, and the Random Forest developed in this work are assessed against the following metrics:
 
 1. Precision - tells how many customers that the model has classified as buying customers actually took the sales offer; highly prioritized because we are tying to reduce wasted calls.
 2. Recall - tells how many customers the model has correctly predicted as buying customers; also a priority since we want to capture buying customers as many as we can to avoid loss in sales opportunities.
@@ -289,16 +289,17 @@ Table 8: Model profitability at default threshold = 0.50.
 | Naive LR| -$325,971.43 |
 | Precision-LR | -$254,042.86 |
 | Avg. Precision-LR | $445,557.14 |
+| Random Forest | -$131,177.14 |
 
 Table 9: Model profitability at optimized thresholds for each risk band.
-| Parameter | Naive LR | Precision-LR | Avg. Precision-LR |
-| :-------: | :------: | :----------: | :---------------: |
-| High Best Threshold | 0.30 | 0.28 | 0.78 |
-| High Best Profit | -$65,310.00 | -$49,770.00 | -$53,970.00 |
-| Mid Best Threshold | 0.15 | 0.15 | 0.59 |
-| Mid Best Profit | $115,980.00 | $139,470.00 | $144,150.00 |
-| Low Best Threshold | 0.11 | 0.09 | 0.38 |
-| Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 |
+| Parameter | Naive LR | Precision-LR | Avg. Precision-LR | Random Forest |
+| :-------: | :------: | :----------: | :---------------: | :-----------: |
+| High Best Threshold | 0.30 | 0.28 | 0.78 | 0.32 |
+| High Best Profit | -$65,310.00 | -$49,770.00 | -$53,970.00 | -36,540.00 |
+| Mid Best Threshold | 0.15 | 0.15 | 0.59 | 0.18 |
+| Mid Best Profit | $115,980.00 | $139,470.00 | $144,150.00 | $167,190.00 |
+| Low Best Threshold | 0.11 | 0.09 | 0.38 | 0.10 |
+| Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 | $501,500.00 |
 
 Table 10: Net profit, total gains, and total lost opportunities at optimized thresholds.
 | Model | Net Profit | Total Gains | Total Lost Opportunities |
@@ -306,6 +307,7 @@ Table 10: Net profit, total gains, and total lost opportunities at optimized thr
 | Naive LR | $466,970.00 | $1,445,380.00 | -$295,610.00 |
 | Precision-LR | $550,950.00 | $1,496,070.00 | -$244,920.00 |
 | Avg. Precision-LR | $567,180.00 | $1,513,035.00 | -$227,955.00 |
+| Random Forest | $632,150.00 | $1,533,880 | -$180,530.00 |
 
 ## Results and Discussions
 
