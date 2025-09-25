@@ -2,8 +2,6 @@
 
 Proponent: Ricky Jay Gomez
 
-Author's Note:
-
 Link to GitHub Repository: https://github.com/rickyjcg22/sales_success_prediction.git
 
 ## Executive Summary
@@ -223,19 +221,29 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 | scoring | precision | avg. precision |
 | cv | 5 | 5 |
 
-### Generalized Linear Model with logit Link Function
-
-### Feature Selected Logistic Regression
-
 ### Random Forest
+
+For the Random Forest model, similar process was employed to model training as with Logistic Regression model. The values of the RF hyperparameters are summarized in Table 6.
+
+Table 6: Random Forest Hyperparameters for Random Search CV
+| Hyperparameter | LR: precision | LR: avg. precision |
+| :-------------: | :--: | :--: |
+| random_state | 42 | 42 |
+| max_iter | 1000 | 1000 |
+| n_jobs | -1 | -1 |
+| C | 100 | 100 |
+| penalty | l1 | l2 |
+| solver | liblinear | liblinear |
+| class_weight | None | balanced |
+| n_iter | 10 | 10 |
+| scoring | precision | avg. precision |
+| cv | 5 | 5 |
 
 ## Model Evaluation
 
 ### Performance
 
-#### Scikit-learn's Logistic Regression
-
-The performance of the Logistic Regression model and its iterations developed in this work are assessed against the following metrics:
+The performance of the Logistic Regression model and its iterations and the Random Forest developed in this work are assessed against the following metrics:
 
 1. Precision - tells how many customers that the model has classified as buying customers actually took the sales offer; highly prioritized because we are tying to reduce wasted calls.
 2. Recall - tells how many customers the model has correctly predicted as buying customers; also a priority since we want to capture buying customers as many as we can to avoid loss in sales opportunities.
@@ -245,22 +253,22 @@ The performance of the Logistic Regression model and its iterations developed in
 6. Average precision - gives aggregated precision scores across various thresholds; good basis of model performance for highly imbalanced dataset such as in our work.
 7. PR AUC - provides how well the model can discriminate between classes when there is a high class imbalance in the dataset by capturing the trade-off between precision and recall.
 
-Table 6 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, and avg. precision-optimized LR models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each logistic model.
+Table 6 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, avg. precision-optimized LR, and random forest models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each model.
 
 Table 6: Summary of Classification Report Outputs
-| Metrics | Naive LR | Precision LR | Avg. Precision LR |
-| :-----: | :------: | :----------: | :---------------: |
-| Precision | 0.65 | 0.67 | 0.43 |
-| Recall | 0.39 | 0.42 | 0.88 |
-| f1-score | 0.49 | 0.52 | 0.57 |
-| Accuracy | 0.91 | 0.91 | 0.85 |
-| ROC AUC | 0.9250 | 0.9308 | 0.9309 |
-| Avg. Precision | 0.5663 | 0.5919 | 0.5808 |
-| PR AUC | 0.5652 | 0.5908 | 0.5797 |
+| Metrics | Naive LR | Precision LR | Avg. Precision LR | Random Forest |
+| :-----: | :------: | :----------: | :---------------: | :-----------: |
+| Precision | 0.65 | 0.67 | 0.43 | 0.62 |
+| Recall | 0.39 | 0.42 | 0.88 | 0.48 |
+| f1-score | 0.49 | 0.52 | 0.57 | 0.55 |
+| Accuracy | 0.91 | 0.91 | 0.85 | 0.91 |
+| ROC AUC | 0.9250 | 0.9308 | 0.9309 | 0.9354 |
+| Avg. Precision | 0.5663 | 0.5919 | 0.5808 | 0.6163 |
+| PR AUC | 0.5652 | 0.5908 | 0.5797 | 0.6157 |
 
-!["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
+!["Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Confusion Matrices and ROC Curves")
 
-Figure 3: Logistic Regression Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimized LR, (c) Avg. Precision-optimized LR
+Figure 3: Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimized LR, (c) Avg. Precision-optimized LR, (d) Random Forest.
 
 ### Profitability Analysis
 
@@ -292,7 +300,7 @@ Table 9: Model profitability at optimized thresholds for each risk band.
 | Low Best Threshold | 0.11 | 0.09 | 0.38 |
 | Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 |
 
-Table 10: Net Profit, Total Gains, and Total Lost Opportunities at Optimized Thresholds.
+Table 10: Net profit, total gains, and total lost opportunities at optimized thresholds.
 | Model | Net Profit | Total Gains | Total Lost Opportunities |
 | :---: | :--------: | :---------: | :----------------------: |
 | Naive LR | $466,970.00 | $1,445,380.00 | -$295,610.00 |
