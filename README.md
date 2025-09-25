@@ -223,7 +223,7 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 
 ### Random Forest
 
-For the Random Forest model, similar process was employed to model training as with Logistic Regression model. The values of the RF hyperparameters are summarized in Table 6.
+For the Random Forest model, similar process was employed to model training as with Logistic Regression model. The values of the RF hyperparameters are summarized in Table 6. Additionally, feature selection was employed based on the feature importance ranking outputs of the RF model.
 
 Table 6: Random Forest Hyperparameters for Random Search CV
 | Hyperparameter | Values |
@@ -255,15 +255,15 @@ The performance of the Logistic Regression model, its iterations, and the Random
 Table 7 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, avg. precision-optimized LR, and random forest models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each model.
 
 Table 7: Summary of Classification Report Outputs
-| Metrics | Naive LR | Precision LR | Avg. Precision LR | Random Forest |
-| :-----: | :------: | :----------: | :---------------: | :-----------: |
-| Precision | 0.65 | 0.67 | 0.43 | 0.62 |
-| Recall | 0.39 | 0.42 | 0.88 | 0.48 |
-| f1-score | 0.49 | 0.52 | 0.57 | 0.55 |
-| Accuracy | 0.91 | 0.91 | 0.85 | 0.91 |
-| ROC AUC | 0.9250 | 0.9308 | 0.9309 | 0.9354 |
-| Avg. Precision | 0.5663 | 0.5919 | 0.5808 | 0.6163 |
-| PR AUC | 0.5652 | 0.5908 | 0.5797 | 0.6157 |
+| Metrics | Naive LR | Precision LR | Avg. Precision LR | Random Forest | Feature-Selected RF |
+| :-----: | :------: | :----------: | :---------------: | :-----------: | :------: |
+| Precision | 0.65 | 0.67 | 0.43 | 0.62 | 0.62 |
+| Recall | 0.39 | 0.42 | 0.88 | 0.48 | 0.48 |
+| f1-score | 0.49 | 0.52 | 0.57 | 0.55 | 0.54 |
+| Accuracy | 0.91 | 0.91 | 0.85 | 0.91 | 0.91 |
+| ROC AUC | 0.9250 | 0.9308 | 0.9309 | 0.9354 | 0.9346 |
+| Avg. Precision | 0.5663 | 0.5919 | 0.5808 | 0.6163 | 0.5945 |
+| PR AUC | 0.5652 | 0.5908 | 0.5797 | 0.6157 | 0.5934 |
 
 !["Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Confusion Matrices and ROC Curves")
 
@@ -289,16 +289,17 @@ Table 9: Model profitability at default threshold = 0.50.
 | Precision-LR | -$254,042.86 |
 | Avg. Precision-LR | $445,557.14 |
 | Random Forest | -$131,177.14 |
+| Feature-Selected RF | -$132,462.86 |
 
 Table 10: Model profitability at optimized thresholds for each risk band.
-| Parameter | Naive LR | Precision-LR | Avg. Precision-LR | Random Forest |
-| :-------: | :------: | :----------: | :---------------: | :-----------: |
-| High Best Threshold | 0.30 | 0.28 | 0.78 | 0.32 |
-| High Best Profit | -$65,310.00 | -$49,770.00 | -$53,970.00 | -36,540.00 |
-| Mid Best Threshold | 0.15 | 0.15 | 0.59 | 0.18 |
-| Mid Best Profit | $115,980.00 | $139,470.00 | $144,150.00 | $167,190.00 |
-| Low Best Threshold | 0.11 | 0.09 | 0.38 | 0.10 |
-| Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 | $501,500.00 |
+| Parameter | Naive LR | Precision-LR | Avg. Precision-LR | Random Forest | Feature-Selected RF |
+| :-------: | :------: | :----------: | :---------------: | :-----------: | :-----: |
+| High Best Threshold | 0.30 | 0.28 | 0.78 | 0.32 | 0.37 |
+| High Best Profit | -$65,310.00 | -$49,770.00 | -$53,970.00 | -36,540.00 | -$40,920.00 |
+| Mid Best Threshold | 0.15 | 0.15 | 0.59 | 0.18 | 0.14 |
+| Mid Best Profit | $115,980.00 | $139,470.00 | $144,150.00 | $167,190.00 | $156,900.00 |
+| Low Best Threshold | 0.11 | 0.09 | 0.38 | 0.10 | 0.10 |
+| Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 | $501,500.00 | $486,300.00 |
 
 Table 11: Net profit, total gains, and total lost opportunities at optimized thresholds.
 | Model | Net Profit | Total Gains | Total Lost Opportunities |
@@ -307,6 +308,7 @@ Table 11: Net profit, total gains, and total lost opportunities at optimized thr
 | Precision-LR | $550,950.00 | $1,496,070.00 | -$244,920.00 |
 | Avg. Precision-LR | $567,180.00 | $1,513,035.00 | -$227,955.00 |
 | Random Forest | $632,150.00 | $1,533,880 | -$180,530.00 |
+| Feature-Selected RF | $ 602,280.00 | $1,516,845.00 | $197,565.00 |
 
 ### Feature Importance
 
