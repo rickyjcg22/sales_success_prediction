@@ -273,6 +273,8 @@ Table 7: Customer Risk Assessment
 | Medium-risk | 25% | 705.00 | -300.00 |
 | Low-risk | 65% | 1,225.00 | -300.00 |
 
+Based on the confusion matrix at default threshold of 0.50, the total profit was calculated from the contributions of customers from each risk band. This gives an initial view of how pofitable a model could be. However, to maximize the profits threshold values from each risk band were optimized, giving the best profit values that our client can generate per model. Likewise, the total profit was recalculated from risk band contributions at optimized thresholds. Alongside, the expected net profit from intended phone calls and the net loss in opportunity due to misclassified customers were also accounted and reported.
+
 ## Results and Discussions
 
 ## Conclusions
