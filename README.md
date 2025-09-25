@@ -243,7 +243,9 @@ The performance of the Logistic Regression model and its iterations developed in
 4. Accuracy - tells how accurate the model classifies a buying vs. non-buying customers; not extremely important for choosing the best model but nice to report as additional layer of context about the model performance.
 5. ROC AUC - gives a holistic view about how the model can discriminate between classes.
 6. Average precision - gives aggregated precision scores across various thresholds; good basis of model performance for highly imbalanced dataset such as in our work.
-7. PR AUC -
+7. PR AUC - provides how well the model can discriminate between classes when there is a high class imbalance in the dataset by capturing the trade-off between precision and recall.
+
+Table 6 shows the summary of the model performance metrics values for naive LR, precision-optimized LR, and avg. precision-optimized LR models. On the other hand, Figure 3 illustrates the confusion matrices (top charts) and Receiver Operating Characteristic (ROC) curves for each logistic model.
 
 Table 6: Summary of Classification Report Outputs
 | Metrics | Naive LR | Precision LR | Avg. Precision LR |
@@ -259,6 +261,17 @@ Table 6: Summary of Classification Report Outputs
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
 Figure 3: Logistic Regression Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimized LR, (c) Avg. Precision-optimized LR
+
+### Profitability Analysis
+
+Our client is planning to run a campaign on the list of 10,000 prospective customers. Thus, they want to directly tie our models' predictive performance against this list so they can decided whether or not this campaign would be worth running based on the gain that they can potentially generate, and account the possible losses from misclassifications. In the report that the sales team has shared to us, they segmented the list based on different risk category and the corresponding risk distribution. Furthermore, they provided us the estimate of the profit estimate for each customer based on their buying decision. These numbers are summarized in Table 7.
+
+Table 6: Summary of Customer Risk Assessment
+| Risk Band | Risk Distribution | Gain from sales taken up | Loss from sales not taken up |
+| :-------: | :---------------: | :----------------------: | :--------------------------: |
+| High-risk | 10% | 285.00 | -300.00 |
+| Medium-risk | 25% | 705.00 | -300.00 |
+| Low-risk | 65% | 1,225.00 | -300.00 |
 
 ## Results and Discussions
 
