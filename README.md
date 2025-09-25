@@ -292,12 +292,12 @@ Table 9: Model profitability at optimized thresholds for each risk band.
 | Low Best Threshold | 0.11 | 0.09 | 0.38 |
 | Low Best Profit | $416,300.00 | $461,250.00 | $477,000.00 |
 
-Table 10: Net Profit Gain and Net Lost Opportunities.
-| Model | Net Profit Gain | Net Lost Opportunities |
-| :---: | :-------------: | :--------------------: |
-| Naive LR| $1,445,380.00 | -$295,610.00 |
-| Precision-LR | $1,496,070.00 | -$244,920.00 |
-| Avg. Precision-LR | $1,513,035.00 | -$227,955.00 |
+Table 10: Net Profit, Total Gain, and Total Lost Opportunities at Optimized Thresholds.
+| Model | Net Profit | Total Gains | Total Lost Opportunities |
+| :---: | :--------: | :---------: | :----------------------: |
+| Naive LR | $466,970.00 | $1,445,380.00 | -$295,610.00 |
+| Precision-LR | $550,950.00 | $1,496,070.00 | -$244,920.00 |
+| Avg. Precision-LR | $567,180.00 | $1,513,035.00 | -$227,955.00 |
 
 ## Results and Discussions
 
