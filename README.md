@@ -225,6 +225,17 @@ Table 5: Logistic Regression Hyperparameters for Random Search CV
 
 ### Performance
 
+Table 6: Summary of Classification Report Outputs
+| Metrics | Naive LR | Precision LR | Avg. Precision LR |
+| :-----: | :------: | :----------: | :---------------: |
+| Precision | 0.65 | 0.65 | 0.43 |
+| Recall | 0.39 | 0.38 | 0.88 |
+| f1-score | 0.49 | 0.48 | 0.57 |
+| Accuracy | 0.91 | 0.91 | 0.85 |
+| ROC AUC | 0.9250 | 0.9243 | 0.9309 |
+| Avg. Precision | 0.5404 | 0.5652 | -0.5808 |
+| PR AUC | 0.5395 | 0.5641 | -0.5797 |
+
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
 Figure 3: Logistic Regression Confusion Matrices and ROC Curves: (a) Naive LR, (b) Precision-optimized LR, (c) Avg. Precision-optimized LR
