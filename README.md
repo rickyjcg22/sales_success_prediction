@@ -250,13 +250,13 @@ Table 6 shows the summary of the model performance metrics values for naive LR, 
 Table 6: Summary of Classification Report Outputs
 | Metrics | Naive LR | Precision LR | Avg. Precision LR |
 | :-----: | :------: | :----------: | :---------------: |
-| Precision | 0.65 | 0.65 | 0.43 |
-| Recall | 0.39 | 0.38 | 0.88 |
-| f1-score | 0.49 | 0.48 | 0.57 |
+| Precision | 0.65 | 0.67 | 0.43 |
+| Recall | 0.39 | 0.42 | 0.88 |
+| f1-score | 0.49 | 0.52 | 0.57 |
 | Accuracy | 0.91 | 0.91 | 0.85 |
-| ROC AUC | 0.9250 | 0.9243 | 0.9309 |
-| Avg. Precision | 0.5404 | 0.5652 | 0.5808 |
-| PR AUC | 0.5395 | 0.5641 | 0.5797 |
+| ROC AUC | 0.9250 | 0.9308 | 0.9309 |
+| Avg. Precision | 0.5404 | 0.5919 | 0.5808 |
+| PR AUC | 0.5395 | 0.5908 | 0.5797 |
 
 !["Logistic Regression Confusion Matrices and ROC Curves"](assets/model_performance.png "Figure 3: Logistic Regression Confusion Matrices and ROC Curves")
 
