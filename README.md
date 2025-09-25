@@ -116,7 +116,7 @@ Table 3 shows the structure of each categorical feature based on their cardinali
 Table 3: Categorical Features Structure
 | Feature | Cardinality | Observations |
 | :-----: | :--------: | :----------: |
-| type_employment | 12 | - Classes with <3% frequency: cat_3, cat_10, cat_8, and cat_11<br>Cat_8 has a strong signal (31.8% Buy Rate) against the target |
+| type_employment | 12 | - Classes with < 3% frequency: cat_3, cat_10, cat_8, and cat_11<br>Cat_8 has a strong signal (31.8% Buy Rate) against the target |
 | civil_status | 4 | - Cat_2 and Cat_3 have the highest response rates while Cat_1 and Cat_2 are the most frequent classes |
 | highest_educ | 8 | - Uneducated (Cat_6) and Unknown (Cat_7) groups show higher-than-average buy rates, especially compared to certain bachelor's degree holders (e.g., Cat_2 at only 7.8%)<br>- Top 3 categories (Cat_6, Cat_3, Cat_2) already cover nearly 70% of the dataset — enough for stable pattern recognition during training<br>- Higher education doesn’t always lead to higher buy probability in this dataset — e.g., Cat_2 (likely a bachelor's group) has one of the lowest response rates<br>- Rare Category (Cat_4): While it shows a high buy rate (23.5%), it's just 0.05% of data |
 | credit_facility | 3 | -Strong separation between Cat_0 (higher buy rates) vs Cat_1 |
@@ -318,7 +318,30 @@ Random Forest has the capability to rank features based on their contribution to
 
 Figure 4: Feature Importance Ranking.
 
-## Results and Discussions
+## Discussions
+
+### Performance
+
+The model performance was evaluated based on the results summaized in Table 7. Essentially, our client aims to reduce wasted calls by making sure that false positives are kept as low as possible. Thus, the first improvement to the Naive
+LR model where it was optimized for precision scoring perfectly aligns with the company's objective. Based on the model improvement done, slight improvements on precision, recall, and f1-score were observed with values of 0.65 to 0.67, 0.39 to 0.42, and 0.49 to 0.52, respectively. Whereas, the accuracy score remains unchanged where this inflation might be caused by the imbalances in the dataset. Same improvements were also noticed in ROC AUC and PR AUC scores wherein the latter provides a more suitable measure of how well the model can discriminate classes. Comparing the first two models, precision-tuned model is considered to be a better operational choice since it aligns well with the goal of minimizing wasted calls.
+
+To handle the class imbalance, another iteration to the model was applied wherein it was tuned for average precision instead. The results show that there is a massive jump in the recall from 0.42 to 0.88, but a significant collapse in precision from 0.67 to 0.43 on the other hand. This observation is important because compared to precision, average precision tunes the model so that it aggregate the precision scores across all thresholds, making sure that the imbalance in the dataset are capture by summarizing the trade-off between precision and recall. The f1-score jumped to 0.57 which reflects the balance between high recall and low precision. Since the number of non-buyers being misclassified as buyer increases, the accuracy drops to 0.85. in business context, this means that the reward of capturing more actual buyers is at the expense of increased wasted calls.
+
+The standard RF model gives reasonable precision and recall values of 0.62 and 0.48, respectively. This yield to highest f1-score of 0.55 besides the avg. precision-heavy Avg. Precision-LR model. Both ROC AUC and PR AUC values of 0.9354 and 0.6157, respectively, have seen the greatest among the all models signifying a model with strongest capability to discriminate classes and handle minority class. Therefore, this model is a great choice if our client prioritizes the balance between precision and recall.
+
+Lastly, Feature-Selected RF model has exhiited almost same performance as the standard onel, but with slightly lower perfromance across metrics. Therefore, following the selection of features based on the feature importance scores provided by the RF model could mean loss in information and predictive power due to the removal of the other features. Nonetheless, being able to identify highly important features increases model interpretability and alignment with the business context.
+
+Overall, the choice of the best model depends on the client's overall objective– maximizing profit and minimizing loss. If higher priority is given to minimizing the wasted calls, then Precision-Optimized LR model is the most suitable among all models. if the business wants a more balanced targeting by not missing too many actual buyers, the standard RF model is the best choice. If getting more wasted calls means investing in acquiring more buyers, then Avg. Precision-Optimized model works well with it. Utlimately, the choice on which model should be used could be figured out better when each model is tested against the actual campaigns by calculating all gains and losses, and estimating the overall net profit that they can bring to the business.
+
+### Profitability Analysis
+
+All models were initially assessed at the default threshold of 0.50. Table 9 shows that all models lost money except the Avg. Precision-Optimized model. This means that although it is at the expense of getting more wasted calls to acquire more actual buyers, the model still became highly profitable with totalling to $445K while the rest didn't even make a dime. However, having the rest of the models generate negative profis could also mean that there are too many false positives leading to wasted calls on another perspective. Thus, making comparisons solely at the default threshold value means not being financially viable since true profitability is not captured. In order to maximize profitability, models must be compared at threshold values where profits are at the highest per risk band per model.
+
+At optimized thresholds, high-risk customers remain unprofitable even with hyperparameter tuning since the high cost of non-buyers outwieghs potential gains, making their total profits negative. For the medium-risk customers, all models result to positive profitability ($115K-$167K) where standard RF model generated the highest total profit of $167K. Across all models, the largest profit generated are contributed by low-risk customers where standard RF model leads at $501K total profit.
+
+In terms of accounting the net profit, total gains, and total lost opportunities, standard RF model remains the highest when maximizing profits and minimizing the losses. Avg. Precision-Optimized model was seen to have competitive profit outputs but higher lost opportunities. A much safer model to use when trying to have more control on costs rather than revenue generation would be the Precision-Optimized model. Lastly, Feature-Selected RF gives a great model performance, but does not satisfy the ultimate goal of maximizing gains and minimizing losses as much as standard RF model could do.
+
+In sum, making analyses at default threshold is unacceptable because the variability of the model performance across various threshold values could not be captured well. Therefore, optimizing the threshold at which maximum profit is achieved for each risk band is essential. In terms of the overall performance, standard RF model has stood out in maximizing profits and minimizing wasted calls; best model to use for operational use. As the backbone of this analysis, threshold calibration with selective targeting is a more strategic move in achieving the business objectives of our client rather than lookin into how accurate the models make predictions.
 
 ## Conclusions
 
