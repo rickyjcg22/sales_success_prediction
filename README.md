@@ -266,7 +266,7 @@ Figure 3: Logistic Regression Confusion Matrices and ROC Curves: (a) Naive LR, (
 
 Our client is planning to run a campaign on the list of 10,000 prospective customers. Thus, they want to directly tie our models' predictive performance against this list so they can decided whether or not this campaign would be worth running based on the gain that they can potentially generate, and account the possible losses from misclassifications. In the report that the sales team has shared to us, they segmented the list based on different risk category and the corresponding risk distribution. Furthermore, they provided us the estimate of the profit estimate for each customer based on their buying decision. These numbers are summarized in Table 7.
 
-Table 6: Summary of Customer Risk Assessment
+Table 7: Customer Risk Assessment
 | Risk Band | Risk Distribution | Gain from sales taken up | Loss from sales not taken up |
 | :-------: | :---------------: | :----------------------: | :--------------------------: |
 | High-risk | 10% | 285.00 | -300.00 |
