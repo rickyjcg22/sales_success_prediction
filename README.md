@@ -62,18 +62,18 @@ There are no missing values detected across all features.
 Table 1 shows the summary of the desciptive statistics of all the numerical features and the observations drawn from them. Whereas, Figure 2 supports the summary statistics with visualized data distributions for each feature through their histograms.
 
 Table 1: Numerical Feature Summary Statistics
-| Feature | Statistics | Observations | Action Items |
-| :-----: | :--------: | :----------: | :----------: |
-| age | Min/Max: 17 to 98<br>Mean/Median: 40.03 vs. 38.00 | - Reasonable data range<br>- Slightly right skewed | |
-| duration_latest | Mean: 257.8<br>Max: 4918<br>Std. Dev.: 258.6 | <br>- Strongly right skewed with a very long tail<br>- High variance | |
-| count_call_current | Mean: 2.56<br>Max: 56<br>75%: 3 | - Most values are low with few extreme outliers | |
-| days_last_campaign | Mean: 962<br>25-75%: 999 | - 999 is used to encode "no previous campaign" | |
-| count_call_previous | Mean: 0.17<br>75%: 0<br>Max: 7 | - Most values are zeros<br>- Maximum value are found to be rare cases with high contact | |
-| evr_quarterly | Min: -3.4<br>Max: 1.4 | - Slightly left skewed<br>- With high variance relative to mean | |
-| cpi_monthly | Min/Max: 92.2 to 94.8<br>Std. Dev.: 0.58 | - Tigh range and variability | |
-| cci_monthly | Min/Max: -50.8 to -26.9 | - Negative values observed (normally seen for CCIs) | |
-| ibr_employee_quarterly | Min/Max: 0.63 to 5.04<br>Median: 4.86 | - Likely bimodal distribution | |
-| count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature | |
+| Feature | Statistics | Observations |
+| :-----: | :--------: | :----------: |
+| age | Min/Max: 17 to 98<br>Mean/Median: 40.03 vs. 38.00 | - Reasonable data range<br>- Slightly right skewed |
+| duration_latest | Mean: 257.8<br>Max: 4918<br>Std. Dev.: 258.6 | <br>- Strongly right skewed with a very long tail<br>- High variance |
+| count_call_current | Mean: 2.56<br>Max: 56<br>75%: 3 | - Most values are low with few extreme outliers |
+| days_last_campaign | Mean: 962<br>25-75%: 999 | - 999 is used to encode "no previous campaign" |
+| count_call_previous | Mean: 0.17<br>75%: 0<br>Max: 7 | - Most values are zeros<br>- Maximum value are found to be rare cases with high contact |
+| evr_quarterly | Min: -3.4<br>Max: 1.4 | - Slightly left skewed<br>- With high variance relative to mean |
+| cpi_monthly | Min/Max: 92.2 to 94.8<br>Std. Dev.: 0.58 | - Tigh range and variability |
+| cci_monthly | Min/Max: -50.8 to -26.9 | - Negative values observed (normally seen for CCIs) |
+| ibr_employee_quarterly | Min/Max: 0.63 to 5.04<br>Median: 4.86 | - Likely bimodal distribution |
+| count_employee_quarterly | Min/Max: 4963.6 to 5228.1<br>Mean: 5167.04<br>Std. Dev.: 72.17 | - Relatively low standard deviation compared to mean value cautions static, low variance feature |
 
 !["Histogram of Numerical Features"](assets/num_hist.png "Figure 2: Histogram of Numerical Features")
 
@@ -343,6 +343,8 @@ In terms of accounting the net profit, total gains, and total lost opportunities
 
 In sum, making analyses at default threshold is unacceptable because the variability of the model performance across various threshold values could not be captured well. Therefore, optimizing the threshold at which maximum profit is achieved for each risk band is essential. In terms of the overall performance, standard RF model has stood out in maximizing profits and minimizing wasted calls; best model to use for operational use. As the backbone of this analysis, threshold calibration with selective targeting is a more strategic move in achieving the business objectives of our client rather than looking into how accurate the models make predictions.
 
-## Conclusions
+## Conclusions and Recommendations
 
-## Recommendation
+This study confirmed that predictive modeling can improve sales efficiency by identifying customers most likely to accept offers, thereby reducing wasted calls and increasing profitability. Among the models tested, Random Forest delivered the highest overall net profit, while precision-optimized Logistic Regression best minimized wasted calls, and average-precision Logistic Regression captured the most buyers. Importantly, the results showed that profitability depends heavily on threshold optimization by risk segment, as default thresholds led to financial losses across most models.
+
+Future work should complete the unfinished parts of this study, including extended profitability simulations, deeper feature importance analysis, and integration of interpretability tools such as SHAP. Expanding comparisons with models like XGBoost and consolidating all results into a unified decision-support framework will allow this project to achieve its full potential and provide stronger business value.
