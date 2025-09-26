@@ -4,7 +4,39 @@ Proponent: Ricky Jay Gomez
 
 Link to GitHub Repository: https://github.com/rickyjcg22/sales_success_prediction.git
 
+Files Directory:
+
+1. Assets folder - contains all assets including images and plots used in reporting.
+2. 'case study.xlsx' - contains the instructions about the case study requirements.
+3. dataset_logreg.csv - dataset for Logistic Regression model
+4. dataset_logreg_1.csv - dataset for Logistic Regression model excluding the Cat_2 category from credit_facility column.
+5. dataset_tree.csv - dataset for Tree-based models.
+6. dataset_tree_1.csv - dataset for Logistic Regression model excluding the Cat_2 category from credit_facility column.
+7. dataset.csv - raw dataset provided by the client.
+8. eda.ipynb - Python codes for EDA.
+9. model_logreg.ipynb - Python codes for Naive and Precision-Optimized LR models.
+10. model_logreg copy.ipynb - Python codes for Avg. Precision-Optimized LR models.
+11. model_rf.ipynb - Python codes for standard RF model.
+12. model_rf copy.ipynb - Python codes for the Feature-Selected RF model.
+13. model_xgboost.ipynb - Python codes for the XGBoost model (work in progress).
+
 ## Executive Summary
+
+This work focused on developing predictive model to improve sales campagin efficiency for an insurance company. The central business problem in this work revolves around the goal of our client being able to identify which among the pool of clients will take the sales offer once they are cold called to mnimize wasted calls and maximize campagin profitability.
+
+The dataset is composed of 35,000 total records with 10 numerical columns, 10 categorical columns, and 1 response column. EDA results suggest revealed a severe class imbalance with successful sales represented the minority class (11.23%) while most of the data belongs to No-Buys class (88.77%). Strong feature-to-target signals were observed from call duration, previous campaign history, and contact medium. High collinearity was seen among economic predictors. The outputs of the EDA process have supplemented the data pre-processing in encoding, transforming, and scaling feature value.
+
+Logisticr Regression and Tree-based (i.e., Random Forest) algorithms were use to build the predictive models. Model performances were assess against a set of metrics such as precision, recall, F1-score, ROC AUC, PR AUC, and profitability simulations. The results showed that:
+
+- Random Forest achieved the highest overall net profit and strongest balance of precision and recall.
+- Precision-optimized LR model minimized wasted calls, aligning cost-control ojectives.
+- Average Precision-optimized LR model captured the most buyers but at the expense of increased wasted calls.
+
+In terms of poritability, it was highlighted that analysis done at default thesholds leads to lossess across all model; hence, deemed unacceptable since the full profitability profile is not being captured in this case. While, risk-band threshold optimization was seen to be critical in terms of turning campaign efforts to real profit. Targeting high-risk bands cause consistent reduction in sales across all models; whereas, low- to mid-risk bands drove all gains.
+
+Overall, the study demonstrates that predictive modeling can provide substantial business value when paired with careful threshold tuning and selective targeting. Among the approaches tested, Random Forest offers the best operational balance, while Logistic Regression remains valuable for interpretability and explanatory insights.
+
+Future work will focus on completing extended profitability simulations, expanding feature importance analysis, and integrating interpretability tools such as SHAP. Adding XGBoost comparisons and consolidating all results into a unified decision-support framework will strengthen the study’s practical value and deliver a comprehensive, business-ready solution.
 
 ## Overview
 
